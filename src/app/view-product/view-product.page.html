@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="product">
+  <img [src]="product.image_path + product.default_pic" alt="ion">
+  <ion-item>    
+    <ion-label class="ion-text-wrap">
+      <h2>
+        {{ product.fullname }}
+        <span class="date">
+          <ion-note>{{ product.num_bedroom }}</ion-note>
+        </span>
+      </h2>
+    </ion-label>
+  </ion-item>
+  
+  <div class="ion-padding">
+    <h1>{{ product.property_name }}</h1>
+    <p>
+      {{ product.property_desc }}
+    </p>
+  </div>
+</ion-content>

@@ -1,0 +1,43 @@
+ 
+  <ion-card *ngIf="product" [routerLink]="'/product/' + product.id">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img [src]="product.image_path + product.default_pic" alt="ion">
+      </ion-avatar>
+      <ion-label>
+        <h3>{{ product.company_name }}</h3>
+        <p>{{ product.contact_number }}</p>
+      </ion-label>
+    </ion-item>
+  
+    <img [src]="product.image_path + product.default_pic" alt="ion">
+    <ion-card-header>
+      <ion-card-title>{{ product.property_name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ product.property_desc }}
+    </ion-card-content>
+  
+    <ion-footer>
+      <ion-row>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>{{ product.num_bedroom }} Beds</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="text"></ion-icon>
+            <div>{{ product.num_bathroom }} Bathrooms</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="time"></ion-icon>
+            <div>{{ product.num_carparking }} Car Parkings</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-footer>
+  </ion-card>
